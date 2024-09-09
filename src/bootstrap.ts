@@ -1,6 +1,7 @@
-import App from "./App.vue"
+import App from "@/App.vue"
 import PrimeVue from "primevue/config"
 import { createApp } from "vue"
+import { initStores } from "./store"
 
 async function bootstrap() {
     const app = createApp(App)
@@ -9,6 +10,7 @@ async function bootstrap() {
     app.use(PrimeVue, { unstyled: true })
 
     // pinia-store
+    await initStores(app)
 
     // 配置路由
 

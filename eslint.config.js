@@ -6,6 +6,7 @@ import pluginVue from "eslint-plugin-vue"
 export default [
     {
         files: ["**/*.{js,mjs,cjs,ts,vue}"],
+        rules: { "@typescript-eslint/no-var-requires": 0 }
     },
     {
         languageOptions: { globals: globals.browser },
@@ -37,6 +38,7 @@ export default [
                     ignores: [],
                 },
             ],
+            "@typescript-eslint/no-namespace": "off"
         },
     },
 ]
