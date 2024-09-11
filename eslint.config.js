@@ -5,7 +5,7 @@ import pluginVue from "eslint-plugin-vue"
 
 export default [
     {
-        files: ["**/*.{js,mjs,cjs,ts,vue}"],
+        files: ["**/*.{js,mjs,cjs,ts,vue,svg}"],
         rules: { "@typescript-eslint/no-var-requires": 0 }
     },
     {
@@ -16,7 +16,7 @@ export default [
     //...pluginVue.configs["flat/essential"],
     ...pluginVue.configs["flat/recommended"],
     {
-        files: ["**/*.{vue,ts,tsx}"],
+        files: ["**/*.{vue,ts,tsx,svg}"],
         languageOptions: {
             parserOptions: {
                 parser: tseslint.parser,
@@ -38,7 +38,8 @@ export default [
                     ignores: [],
                 },
             ],
-            "@typescript-eslint/no-namespace": "off"
+            "@typescript-eslint/no-namespace": "off",
+            "vue/multi-word-component-names": "off"
         },
     },
 ]

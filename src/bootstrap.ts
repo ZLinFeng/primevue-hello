@@ -1,8 +1,9 @@
 import App from "@/App.vue"
-import PrimeVue from "primevue/config"
 import { createApp } from "vue"
 import { initStores } from "./store"
 import initMock from "./mock"
+import router from "./router"
+import initStyle from "./style"
 
 async function bootstrap() {
     // 假如是开发环境则使用mock数据验证
@@ -11,12 +12,13 @@ async function bootstrap() {
     const app = createApp(App)
 
     // 配置UI
-    app.use(PrimeVue, { unstyled: true })
+    initStyle(app)
 
     // pinia-store
     await initStores(app)
 
     // 配置路由
+    app.use(router)
 
     app.mount("#app")
 }
