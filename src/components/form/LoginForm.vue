@@ -24,15 +24,15 @@ const passwordValue = ref("")
         <span class="text-2xl text-center mb-4 mt-12">
             {{ props.name }} Login
         </span>
-        <span class="text-xs text-center line-clamp-2 leading-loose text-slate-500">
+        <span class="text-xs text-center line-clamp-2 leading-loose text-slate-800">
             {{ props.desc }}
         </span>
         <div class="flex h-[40px] mt-[30px] gap-2 place-content-center">
             <div class="place-content-center">
                 <SvgIcon
-                    class="text-black"
                     name="username"
                     :size="25"
+                    type="primary"
                 />
             </div>
             <FloatLabel>
@@ -47,9 +47,9 @@ const passwordValue = ref("")
         <div class="flex h-[40px] mt-[30px] gap-2 place-content-center">
             <div class="place-content-center">
                 <SvgIcon
-                    class="text-black"
                     name="password"
                     :size="25"
+                    type="info"
                 />
             </div>
             <FloatLabel>
