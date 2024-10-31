@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import LoginForm from "./form/LoginForm.vue"
+import BasicLayout from "../layout/BasicLayout.vue"
+
 
 
 </script>
 
 <template>
-    <LoginForm
-        name="Agent"
-        desc="Hey, Enter your details to get sign in to your account"
-    />
+    <BasicLayout />
 </template>
 <style scoped>
 </style>

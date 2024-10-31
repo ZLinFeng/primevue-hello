@@ -2,6 +2,7 @@ import type { App } from "vue"
 import Aura from "@primevue/themes/aura"
 import { definePreset } from "@primevue/themes"
 import PrimeVue from "primevue/config"
+import ToastService from "primevue/toastservice"
 
 const MaPreset = definePreset(Aura, {
     semantic: {
@@ -34,7 +35,7 @@ const MaPreset = definePreset(Aura, {
                     color: "{red.500}"
                 },
                 warning: {
-                    color: "{yellow-500}"
+                    color: "{yellow.500}"
                 }
             }
         }
@@ -47,4 +48,5 @@ export default function initStyle(app: App) {
             preset: MaPreset
         }
     })
+    app.use(ToastService)
 }

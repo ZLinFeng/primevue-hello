@@ -4,11 +4,19 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router"
 const coreRoutes: RouteRecordRaw[] = [
     {
         meta: {
-            title: "Password"
+            title: "Login"
+        },
+        component: () => import("@/view/auth/AuthLogin.vue"),
+        name: "Login",
+        path: "/login"
+    },
+    {
+        meta: {
+            title: "Test"
         },
         component: () => import("@/components/TestComponent.vue"),
-        name: "Password",
-        path: "/password"
+        name: "Test",
+        path: "/test"
     }
 ]
 

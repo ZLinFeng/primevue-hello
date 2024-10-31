@@ -1,9 +1,17 @@
 <script setup lang="ts">
-import Button from "primevue/button"
+import BaseSider from "./BaseSider.vue"
+
 </script>
 
 <template>
-    <Button>Click</Button>
+    <div class="flex h-screen">
+        <div class="xl:w-[400px] bg-slate-400 w-[300px]">
+            <BaseSider />
+        </div>
+        <div>
+            main
+        </div>
+    </div>
 </template>
 
 <style scoped>

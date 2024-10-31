@@ -1,13 +1,13 @@
 import App from "@/App.vue"
 import { createApp } from "vue"
 import { initStores } from "./store"
-import initMock from "./mock"
+//import initMock from "./mock"
 import router from "./router"
 import initStyle from "./style"
 
 async function bootstrap() {
     // 假如是开发环境则使用mock数据验证
-    initMock()
+    //initMock()
 
     const app = createApp(App)
 

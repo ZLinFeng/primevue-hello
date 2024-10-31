@@ -25,6 +25,7 @@ export default [
         rules: {
             "no-console": "off",
             indent: ["error", 4],
+            "@typescript-eslint/no-explicit-any": ["off"],
             quotes: ["error", "double"],
             semi: ["error", "never"],
             "vue/html-indent": [
