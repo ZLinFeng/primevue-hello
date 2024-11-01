@@ -5,7 +5,7 @@ import BaseSider from "./BaseSider.vue"
 
 <template>
     <div class="flex h-screen">
-        <div class="xl:w-[400px] bg-slate-400 w-[300px]">
+        <div class="xl:w-[400px] w-[300px]">
             <BaseSider />
         </div>
         <div>

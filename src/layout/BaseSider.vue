@@ -84,11 +84,35 @@ const items = ref([
 </script>
 
 <template>
-    <div class="flex justify-center">
+    <div class="flex flex-col">
+        <div class="h-[100px] flex justify-center items-center">
+            <span class="text-3xl italic">
+                Play-Admin
+            </span>
+        </div>
+        <div class="flex justify-center">
         <PanelMenu
             :model="items"
             class="w-[250px]"
-        />
+            :pt="{panel: {class: ['border-0']}}"
+        >
+        <template #item="{item}">
+            <router-link v-if="item.route" :to="item.route">
+                <div>
+
+                </div>
+            </router-link>
+            <div v-else>
+                <div class="flex h-[30px] items-center gap-8">
+                    <span :class="[item.icon, 'ml-3']" />
+                    <span>
+                        {{ item.label }}
+                    </span>
+                </div>
+            </div>
+        </template>
+    </PanelMenu>
+    </div>
     </div>
 </template>
 
