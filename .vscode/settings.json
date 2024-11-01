@@ -13,7 +13,7 @@
         "jsonc",
         "json5",
         "markdown",
-        "svg",
+        //"svg",
     ],
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
