@@ -17,6 +17,21 @@ const coreRoutes: RouteRecordRaw[] = [
         component: () => import("@/components/TestComponent.vue"),
         name: "Test",
         path: "/test"
+    },
+    {
+        meta: {
+            title: "Layout"
+        },
+        component: () => import("@/layout/BasicLayout.vue"),
+        path: "/",
+        name: "Layout",
+        children: [
+            {
+                name: "User",
+                component: () => import("@/view/sys/UsersView.vue"),
+                path: "sys/user"
+            }
+        ]
     }
 ]
 

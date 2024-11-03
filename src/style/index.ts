@@ -7,23 +7,23 @@ import ToastService from "primevue/toastservice"
 const MaPreset = definePreset(Aura, {
     semantic: {
         primary: {
-            50: "{purple.50}",
-            100: "{purple.100}",
-            200: "{purple.200}",
-            300: "{purple.300}",
-            400: "{purple.400}",
-            500: "{purple.500}",
-            600: "{purple.600}",
-            700: "{purple.700}",
-            800: "{purple.800}",
-            900: "{purple.900}",
-            950: "{purple.950}"
+            50: "{slate.50}",
+            100: "{slate.100}",
+            200: "{slate.200}",
+            300: "{slate.300}",
+            400: "{slate.400}",
+            500: "{slate.500}",
+            600: "{slate.600}",
+            700: "{slate.700}",
+            800: "{slate.800}",
+            900: "{slate.900}",
+            950: "{slate.950}"
         },
         colorScheme: {
             light: {
                 primary: {
-                    color: "{purple.500}",
-                    background: "{purple.500}"
+                    color: "{slate.900}",
+                    background: "{slate.900}"
                 },
                 info: {
                     color: "{slate.400}",

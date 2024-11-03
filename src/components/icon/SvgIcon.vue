@@ -23,12 +23,12 @@ const props = defineProps({
 })
 
 const computedStyle = computed(() => {
-    let color = $dt(`${props.type}.color`).value
-    if (typeof color != "string") {
-        color = color.light.value
-    }
+    // let color = $dt(`${props.type}.color`).value
+    // if (typeof color != "string") {
+    //     color = color.light.value
+    // }
     return {
-        color: `${color}`,
+        //color: `${color}`,
         width: `${props.size}px`,
         height: `${props.size}px`,
     }
