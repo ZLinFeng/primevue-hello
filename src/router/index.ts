@@ -22,7 +22,7 @@ const coreRoutes: RouteRecordRaw[] = [
         meta: {
             title: "Layout"
         },
-        component: () => import("@/layout/BasicLayout.vue"),
+        component: () => import("@/layout/BaseLayout.vue"),
         path: "/",
         name: "Layout",
         children: [

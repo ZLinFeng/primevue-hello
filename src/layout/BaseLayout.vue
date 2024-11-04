@@ -22,7 +22,8 @@ onUnmounted(() => {
 })
 
 const computedWidth = computed(() => {
-    return `${screenWidth.value - 250}px`
+    console.log(`computed: ${screenWidth.value - 240}px`)
+    return `${screenWidth.value - 240}px`
 })
 
 
@@ -30,7 +31,7 @@ const computedWidth = computed(() => {
 
 <template>
     <div class="flex h-screen w-screen">
-        <div class="w-[300px] h-full">
+        <div class="w-[240px] h-full">
             <BaseSider class="w-full h-full" />
         </div>
         <Divider
@@ -46,9 +47,9 @@ const computedWidth = computed(() => {
                 <BaseHeader />
             </div>
             <div
-                class="flex-grow mt-10 mb-2 mx-2 bg-white rounded-2xl flex flex-col w-full"
+                class="flex-grow mt-10 mb-2 mx-2 bg-white rounded-2xl flex flex-col"
             >
-                <!--                <scroll-panel
+                <scroll-panel
                     class="flex-grow h-[500px] w-full"
                     :dt="{
                         bar: {
@@ -57,7 +58,7 @@ const computedWidth = computed(() => {
                     }"
                 >
                     <RouterView />
-                </scroll-panel>-->
+                </scroll-panel>
             </div>
         </div>
     </div>
