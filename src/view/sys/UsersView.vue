@@ -25,18 +25,19 @@ const selectKeys = ref(null)
 
 <template>
     <div class="flex h-full w-full">
-        <div class="w-2/5 mt-2 ml-2">
+        <div class="w-[400px] mt-2 ml-2">
             <Tree
                 v-model:selection-keys="selectKeys"
                 :value="data"
                 selection-mode="checkbox"
+                class="w-[400px]"
             />
         </div>
         <Divider
             layout="vertical"
             class="h-full"
         />
-        <div class="flex-grow mt-2">
+        <div class="mt-2 w-auto">
             <BaseTable />
         </div>
     </div>

@@ -102,31 +102,31 @@ const selectedProduct = ref(null)
                     field="code"
                     header="Code"
                     sortable
-                    style="min-width: 200px"
+                    style="min-width: 400px"
                 />
                 <Column
                     field="name"
                     header="Name"
                     sortable
-                    style="min-width: 200px"
+                    style="min-width: 400px"
                 />
                 <Column
                     field="category"
                     header="Category"
                     sortable
-                    style="min-width: 200px"
+                    style="min-width: 400px"
                 />
                 <Column
                     field="quantity"
                     header="Quantity"
                     sortable
-                    style="min-width: 200px"
+                    style="min-width: 400px"
                 />
                 <Column
                     field="price"
                     header="Price"
                     sortable
-                    style="min-width: 200px"
+                    style="min-width: 400px"
                 />
                 <Column
                     field="description"
