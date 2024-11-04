@@ -24,8 +24,8 @@ const selectKeys = ref(null)
 </script>
 
 <template>
-    <div class="flex h-full">
-        <div class="w-[300px] mt-2 ml-2">
+    <div class="flex h-full w-full">
+        <div class="w-2/5 mt-2 ml-2">
             <Tree
                 v-model:selection-keys="selectKeys"
                 :value="data"
