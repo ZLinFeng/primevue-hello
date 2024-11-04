@@ -22,6 +22,105 @@ const products = ref([{
     quantity: 24,
     inventoryStatus: "INSTOCK",
     rating: 5
+},{
+    id: "1000",
+    code: "f230fh0g3",
+    name: "Bamboo Watch",
+    description: "Product Description",
+    image: "bamboo-watch.jpg",
+    price: 65,
+    category: "Accessories",
+    quantity: 24,
+    inventoryStatus: "INSTOCK",
+    rating: 5
+},{
+    id: "1000",
+    code: "f230fh0g3",
+    name: "Bamboo Watch",
+    description: "Product Description",
+    image: "bamboo-watch.jpg",
+    price: 65,
+    category: "Accessories",
+    quantity: 24,
+    inventoryStatus: "INSTOCK",
+    rating: 5
+},{
+    id: "1000",
+    code: "f230fh0g3",
+    name: "Bamboo Watch",
+    description: "Product Description",
+    image: "bamboo-watch.jpg",
+    price: 65,
+    category: "Accessories",
+    quantity: 24,
+    inventoryStatus: "INSTOCK",
+    rating: 5
+},{
+    id: "1000",
+    code: "f230fh0g3",
+    name: "Bamboo Watch",
+    description: "Product Description",
+    image: "bamboo-watch.jpg",
+    price: 65,
+    category: "Accessories",
+    quantity: 24,
+    inventoryStatus: "INSTOCK",
+    rating: 5
+},{
+    id: "1000",
+    code: "f230fh0g3",
+    name: "Bamboo Watch",
+    description: "Product Description",
+    image: "bamboo-watch.jpg",
+    price: 65,
+    category: "Accessories",
+    quantity: 24,
+    inventoryStatus: "INSTOCK",
+    rating: 5
+},{
+    id: "1000",
+    code: "f230fh0g3",
+    name: "Bamboo Watch",
+    description: "Product Description",
+    image: "bamboo-watch.jpg",
+    price: 65,
+    category: "Accessories",
+    quantity: 24,
+    inventoryStatus: "INSTOCK",
+    rating: 5
+},{
+    id: "1000",
+    code: "f230fh0g3",
+    name: "Bamboo Watch",
+    description: "Product Description",
+    image: "bamboo-watch.jpg",
+    price: 65,
+    category: "Accessories",
+    quantity: 24,
+    inventoryStatus: "INSTOCK",
+    rating: 5
+},{
+    id: "1000",
+    code: "f230fh0g3",
+    name: "Bamboo Watch",
+    description: "Product Description",
+    image: "bamboo-watch.jpg",
+    price: 65,
+    category: "Accessories",
+    quantity: 24,
+    inventoryStatus: "INSTOCK",
+    rating: 5
+},{
+    id: "1000",
+    code: "f230fh0g3",
+    name: "Bamboo Watch",
+    description: "Product Description",
+    image: "bamboo-watch.jpg",
+    price: 65,
+    category: "Accessories",
+    quantity: 24,
+    inventoryStatus: "INSTOCK",
+    rating: 5
 }])
 
 const selectedProduct = ref(null)
@@ -72,10 +171,11 @@ const selectedProduct = ref(null)
             <DataTable
                 v-model:selection="selectedProduct"
                 :value="products"
+                show-gridlines
                 class="w-full"
                 data-key="id"
                 scrollable
-                scroll-height="400px"
+                scroll-height="800px"
                 table-style="min-width: 50rem"
                 paginator
                 removable-sort

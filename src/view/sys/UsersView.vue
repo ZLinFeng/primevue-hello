@@ -3,17 +3,32 @@
 import Tree from "primevue/tree"
 import {ref} from "vue"
 import BaseTable from "@/components/BaseTable.vue"
-import Divider from "primevue/divider"
 
 const data = [
     {
         key: "a",
-        label:"研发部门",
-        data: "dev",
+        label:"/",
+        data: "all",
         children: [
             {
                 key: "b",
-                label: "Edison",
+                label: "Development",
+                data: "dev",
+                children:[{
+                    key: "c",
+                    label: "algorithm",
+                    data: "algorithm",
+                    children:[{
+                        key: "d",
+                        label: "Edison",
+                        data: "edison",
+                    },
+                    {
+                        key: "e",
+                        label: "Zhuuuuuuuuuuuuuuuuuuu",
+                        data: "zhu",
+                    }]
+                }]
             }
         ]
     }
@@ -24,20 +39,16 @@ const selectKeys = ref(null)
 </script>
 
 <template>
-    <div class="flex h-full w-full">
-        <div class="w-[400px] mt-2 ml-2">
+    <div class="grid grid-cols-5">
+        <div class="mt-2 ml-2 ">
             <Tree
                 v-model:selection-keys="selectKeys"
                 :value="data"
                 selection-mode="checkbox"
-                class="w-[400px]"
+                class="!p-0 !pr-2"
             />
         </div>
-        <Divider
-            layout="vertical"
-            class="h-full"
-        />
-        <div class="mt-2 w-auto">
+        <div class="col-start-2 col-span-4 pt-6">
             <BaseTable />
         </div>
     </div>

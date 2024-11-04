@@ -22,8 +22,13 @@ onUnmounted(() => {
 })
 
 const computedWidth = computed(() => {
-    console.log(`computed: ${screenWidth.value - 240}px`)
-    return `${screenWidth.value - 240}px`
+    console.log(`computed: ${screenWidth.value - 241}px`)
+    return `${screenWidth.value - 241}px`
+})
+
+const computedContainWidth = computed(() => {
+    console.log(`computed: ${screenWidth.value - 241 - 20}px`)
+    return `${screenWidth.value - 241 - 20}px`
 })
 
 
@@ -47,7 +52,8 @@ const computedWidth = computed(() => {
                 <BaseHeader />
             </div>
             <div
-                class="flex-grow mt-10 mb-2 mx-2 bg-white rounded-2xl flex flex-col"
+                class="flex-grow mt-10 mb-2 mx-[10px] bg-white rounded-2xl flex flex-col"
+                :style="{width: computedContainWidth}"
             >
                 <scroll-panel
                     class="flex-grow h-[500px] w-full"
