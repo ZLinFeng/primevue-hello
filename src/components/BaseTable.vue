@@ -132,7 +132,7 @@ watch(selectedProduct, (newValue) => {
 </script>
 
 <template>
-    <div class="flex flex-col gap-4 w-full">
+    <div class="flex flex-col gap-4 p-4">
         <div class="mx-8 flex items-center">
             <div class="flex h-[40px] gap-4 items-center">
                 <Dialog
