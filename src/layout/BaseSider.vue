@@ -9,12 +9,30 @@ const items = ref([
         separator: true
     },
     {
+        label: "SCHEDULE",
+        items: [
+            {
+                label: "Jobs",
+                icon: "users",
+            },
+            {
+                label: "Tasks",
+                icon: "depts",
+            }
+        ]
+    },
+    {
         label: "SYSTEM",
         items: [
             {
                 label: "Users",
                 icon: "users",
                 shortcut: "⌘+U"
+            },
+            {
+                label: "Departments",
+                icon: "depts",
+                shortcut: "⌘+D"
             },
             {
                 label: "Roles",
@@ -40,7 +58,8 @@ const items = ref([
         >
             <template #start>
                 <div class="flex justify-center items-center my-6">
-                    <span class="text-3xl italic">Play-Admin</span>
+                    <span class="text-3xl italic text-primary">Play</span>
+                    <span class="text-3xl italic">-Admin</span>
                 </div>
             </template>
             <template #submenulabel="{item}">
@@ -59,7 +78,10 @@ const items = ref([
                     </div>
 
                     <span>{{ item.label }}</span>
-                    <span class="ml-auto text-[8px] p-1 border-[1px] border-slate-400 border-solid rounded bg-slate-100">{{ item.shortcut }}</span>
+                    <span
+                        v-if="item.shortcut"
+                        class="ml-auto text-[8px] p-1 border-[1px] border-slate-400 border-solid rounded bg-slate-100"
+                    >{{ item.shortcut }}</span>
                 </div>
             </template>
         </Menu>

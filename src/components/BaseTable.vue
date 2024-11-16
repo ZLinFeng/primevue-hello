@@ -4,10 +4,9 @@ import Button from "primevue/button"
 
 import DataTable from "primevue/datatable"
 import Column from "primevue/column"
-import ColumnGroup from "primevue/columngroup"   // optional
-import Row from "primevue/row"                   // optional
+import Dialog from "primevue/dialog"
 
-import {ref} from "vue"
+import {ref, watch} from "vue"
 
 const advanceSearch = ref(false)
 
@@ -23,7 +22,7 @@ const products = ref([{
     inventoryStatus: "INSTOCK",
     rating: 5
 },{
-    id: "1000",
+    id: "1001",
     code: "f230fh0g3",
     name: "Bamboo Watch",
     description: "Product Description",
@@ -34,7 +33,7 @@ const products = ref([{
     inventoryStatus: "INSTOCK",
     rating: 5
 },{
-    id: "1000",
+    id: "1002",
     code: "f230fh0g3",
     name: "Bamboo Watch",
     description: "Product Description",
@@ -45,7 +44,7 @@ const products = ref([{
     inventoryStatus: "INSTOCK",
     rating: 5
 },{
-    id: "1000",
+    id: "1003",
     code: "f230fh0g3",
     name: "Bamboo Watch",
     description: "Product Description",
@@ -56,7 +55,7 @@ const products = ref([{
     inventoryStatus: "INSTOCK",
     rating: 5
 },{
-    id: "1000",
+    id: "1004",
     code: "f230fh0g3",
     name: "Bamboo Watch",
     description: "Product Description",
@@ -67,7 +66,7 @@ const products = ref([{
     inventoryStatus: "INSTOCK",
     rating: 5
 },{
-    id: "1000",
+    id: "1005",
     code: "f230fh0g3",
     name: "Bamboo Watch",
     description: "Product Description",
@@ -123,14 +122,26 @@ const products = ref([{
     rating: 5
 }])
 
-const selectedProduct = ref(null)
+const selectedProduct = ref([])
+const addVisible = ref(false)
+
+watch(selectedProduct, (newValue) => {
+    console.log(newValue)
+})
 
 </script>
 
 <template>
     <div class="flex flex-col gap-4 w-full">
-        <div class="flex items-center">
+        <div class="mx-8 flex items-center">
             <div class="flex h-[40px] gap-4 items-center">
+                <Dialog
+                    v-model:visible="addVisible"
+                    modal
+                    header="Add Record"
+                >
+                    <slot name="add" />
+                </Dialog>
                 <Button
                     class="h-[30px]"
                     icon="pi pi-filter"
@@ -141,33 +152,36 @@ const selectedProduct = ref(null)
                     class="h-[30px]"
                     icon="pi pi-plus"
                     label="Add"
+                    @click="addVisible = true"
                 />
                 <Button
                     class="h-[30px]"
                     severity="danger"
                     label="Delete"
                     icon="pi pi-trash"
-                    disabled
+                    outlined
+                    :disabled="selectedProduct.length == 0"
                 />
             </div>
 
-            <div class="flex-auto flex justify-end pr-8 gap-4">
+            <div class="flex-auto flex justify-end gap-4">
                 <Button
                     class="!h-[30px]"
-                    severity="success"
+                    severity="secondary"
                     icon="pi pi-download"
                     label="Import"
                 />
                 <Button
                     class="!h-[30px]"
-                    severity="help"
+                    severity="secondary"
                     icon="pi pi-upload"
                     label="Export"
+                    :disabled="selectedProduct.length == 0"
                 />
             </div>
         </div>
         <div v-if="advanceSearch" />
-        <div class="pr-8">
+        <div>
             <DataTable
                 v-model:selection="selectedProduct"
                 :value="products"
@@ -184,13 +198,14 @@ const selectedProduct = ref(null)
             >
                 <template #header>
                     <div class="flex flex-wrap items-center justify-between gap-2">
-                        <span class="text-xl text-slate-900">
+                        <span class="text-xl text-slate-900 ml-4">
                             Users
                         </span>
                         <Button
                             icon="pi pi-refresh"
                             rounded
                             raised
+                            class="mr-4"
                         />
                     </div>
                 </template>
@@ -202,37 +217,37 @@ const selectedProduct = ref(null)
                     field="code"
                     header="Code"
                     sortable
-                    style="min-width: 400px"
+                    style="min-width: 200px"
                 />
                 <Column
                     field="name"
                     header="Name"
                     sortable
-                    style="min-width: 400px"
+                    style="min-width: 200px"
                 />
                 <Column
                     field="category"
                     header="Category"
                     sortable
-                    style="min-width: 400px"
+                    style="min-width: 200px"
                 />
                 <Column
                     field="quantity"
                     header="Quantity"
                     sortable
-                    style="min-width: 400px"
+                    style="min-width: 200px"
                 />
                 <Column
                     field="price"
                     header="Price"
                     sortable
-                    style="min-width: 400px"
+                    style="min-width: 200px"
                 />
                 <Column
                     field="description"
                     header="Description"
                     sortable
-                    class="w-[400px]"
+                    style="min-width: 200px"
                 />
             </DataTable>
         </div>

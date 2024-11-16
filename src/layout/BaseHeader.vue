@@ -27,9 +27,7 @@ const searchInput = ref("")
                 <InputIcon
                     class=""
                 >
-                    <div class="border-[1px] border-slate-400 bg-slate-100 rounded">
-                        <span class="text-xs m-1 text-black">⌘+S</span>
-                    </div>
+                    <span class="text-xs m-1 text-black">⌘+S</span>
                 </InputIcon>
             </IconField>
         </div>
